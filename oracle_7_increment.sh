@@ -9,6 +9,8 @@ yum clean all
 reposync --repoid=ol7_latest --norepopath --download-metadata --newest-only --downloadcomps -p ${oracle_dir}/baseline/OracleLinux/OL7/latest/x86_64/
 reposync --repoid=ol7_UEKR6 --norepopath --download-metadata --newest-only --downloadcomps -p ${oracle_dir}/baseline/OracleLinux/OL7/UEKR6/x86_64/
 reposync --repoid=ol7_kvm_utils --norepopath --download-metadata --newest-only --downloadcomps -p ${oracle_dir}/baseline/OracleLinux/OL7/kvm/utils/x86_64/
+reposync --repoid=ol7_security_validation --norepopath --download-metadata --newest-only --downloadcomps -p ${oracle_dir}/baseline/OracleLinux/OL7/security/validation/x86_64/
+reposync --repoid=ol7_u8_security_validation --norepopath --download-metadata --newest-only --downloadcomps -p ${oracle_dir}/baseline/OracleLinux/OL7/8/security/validation/x86_64/
 # compare the baseline to the compare directory and export the difference to a new increment directory
 rsync -rcC --ignore-existing --compare-dest=${oracle_dir}/compare/ ${oracle_dir}/baseline/ ${oracle_dir}/increments/${date}-increment/
 # copy the contents of the current baseline to the compare directory.
